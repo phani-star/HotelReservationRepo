@@ -1,0 +1,21 @@
+<table>
+    <thead>
+      <tr>
+        <!-- Define table headers -->
+        <th>Reservation Id</th>
+        <th>Customer</th>
+        <th>Room</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <!-- Display reservation details -->
+        <td>{{reservation.reservationId}}</td>
+        <td>{{ reservation.customer.firstName +' '+ reservation.customer.lastName  }}</td>
+        <td>{{ reservation.room.roomType }}</td>
+        <td>
+          <button (click)="deleteReservation(reservation.reservationId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Room Reservation</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="checkInDate">Check-In Date</label>
+      <input type="date" id="checkInDate" name="fromDate" [(ngModel)]="reservation.fromDate" required>
+    </div>
+    <div class="form-group">
+      <label for="checkOutDate">Check-Out Date</label>
+      <input type="date" id="checkOutDate" name="toDate" [(ngModel)]="reservation.toDate" required>
+    </div>
+    <div class="form-group">
+      <label for="customerId">Customer</label>
+      <select id="customerId" name="customerId" [(ngModel)]="reservation.customer" required>
+        <option *ngFor="let customer of customers" [ngValue]="customer">{{ customer.firstName }} {{ customer.lastName }}{{'-'+customer.customerId}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="roomId">Room</label>
+      <select id="roomId" name="roomId" [(ngModel)]="reservation.room" required>
+        <option *ngFor="let room of rooms" [ngValue]="room">{{ room.roomNbr+'-'+room.roomType }}</option>
+        
+      </select>
+    </div>
+    <button type="submit">Reserve Room</button>
+  </form>
+</div>

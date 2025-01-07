@@ -1,0 +1,20 @@
+<div class="reservation-deletion">
+
+    <h2>Delete Reservation</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+  
+        <label for="reservationId">Reservation ID</label>
+  
+        <input type="number" id="reservationId" name="reservationId" [(ngModel)]="reservation.reservationId" required>
+  
+      </div>
+
+  
+      <button type="submit">Delete Reservation</button>
+  
+    </form>
+  
+  </div>
